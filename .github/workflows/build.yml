@@ -19,7 +19,7 @@ jobs:
         with:
           expo-version: 4.x
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-          expo-token: ${{ secrets.EXPO_CLI_TOKEN }}
+          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - name: Install deps
         run: yarn install
       - name: Build Android APK Bundle
