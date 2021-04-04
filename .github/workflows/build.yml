@@ -72,6 +72,7 @@ jobs:
           --provisioning-profile-path ./../apple/diadiemthainguyen.mobileprovision
           --push-id JW398MB4L8
           --push-p8-path ./../apple/apple-8.cer
+          --release-channel test
         env:
           EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
           EXPO_APPLE_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}}
