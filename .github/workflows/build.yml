@@ -47,13 +47,13 @@ jobs:
           apple-id-password: ${{ secrets.EXPO_APPLE_PASSWORD }}
       - uses: expo/expo-github-action@v5
         with:
-          expo-version: 3.x
+          expo-version: 4.x
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
       - name: Install deps
         run: yarn install
       - name: Build iOS app
-        run: expo build:ios
+        run: expo credentials:manager -p ios
         env:
           EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
           EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}}
