@@ -55,7 +55,7 @@ jobs:
         run: yarn install
       - uses: jakemwood/expo-apple-2fa@main
         env:
-          -ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
         with:
           expo_apple_id: ${{ secrets.EXPO_APPLE_ID }}
           expo_apple_password: ${{ secrets.EXPO_APPLE_PASSWORD }}
