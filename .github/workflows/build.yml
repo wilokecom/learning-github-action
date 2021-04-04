@@ -50,6 +50,7 @@ jobs:
           expo-version: 4.x
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+          expo-cache: true
       - name: Install deps
         run: yarn install
       - name: Build iOS app
@@ -57,7 +58,9 @@ jobs:
           expo build:ios \\
           --team-id 5UWGGHF8U7 \\
           --dist-p12-path ./apple/apple-p12.cer \\
-          --provisioning-profile-path ./apple/diadiemthainguyen.mobileprovision
+          --provisioning-profile-path ./apple/diadiemthainguyen.mobileprovision \\
+          --push-id JW398MB4L8 \\
+          --push-p8-path ./apple/apple-8.cer
         env:
           EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
           EXPO_APPLE_ID_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}}
