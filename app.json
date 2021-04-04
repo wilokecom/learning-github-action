@@ -2,9 +2,9 @@
     "expo": {
         "name": "Wilcity",
         "description": "Wilcity - Directory Listing WordPress Theme",
-        "slug": "wilcity-test",
+        "slug": "diadiemthainguyen",
         "privacy": "public",
-        "scheme": "wilcity-test",
+        "scheme": "diadiemthainguyen",
         "platforms": ["ios", "android"],
         "version": "2.1.1",
         "orientation": "portrait",
@@ -34,7 +34,7 @@
                 "NSCameraUsageDescription": "This app requires to access your photo library to show image on profile",
                 "NSPhotoLibraryUsageDescription": "This app requires to access your photo library to show image on profile"
             },
-            "bundleIdentifier": "com.wiloke.wilcity",
+            "bundleIdentifier": "com.diadiemthainguyen",
             "usesAppleSignIn": true,
             "config": {
                 "googleSignIn": {
@@ -44,7 +44,7 @@
         },
         "android": {
             "googleServicesFile": "./google-services.json",
-            "package": "com.wiloke.wilcity",
+            "package": "com.diadiemthainguyen",
             "versionCode": 26,
             "config": {
                 "googleMaps": {
@@ -59,7 +59,7 @@
             "intentFilters": [{
                 "action": "VIEW",
                 "data": [{
-                    "scheme": "wilcity-test"
+                    "scheme": "diadiemthainguyen"
                 }],
                 "category": ["BROWSABLE", "DEFAULT"]
             }],
