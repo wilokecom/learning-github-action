@@ -61,12 +61,18 @@ jobs:
       #          expo_apple_id: ${{ secrets.EXPO_APPLE_ID }}
       #          expo_apple_password: ${{ secrets.EXPO_APPLE_PASSWORD }}
       #          app_specific_password: ${{ secrets.EXPO_APP_SPECIFIC_PASSWORD }}
+      - name: Optimize image
+        run: run npx expo-optimize
       - name: Build iOS app
-        run: |
-          expo build:ios -t archive --team-id 5UWGGHF8U7 --dist-p12-path ./apple/CertificatesP12.p12 --push-id RDRBQZ38N4 --push-p8-path ./apple/AuthKey_RDRBQZ38N4.p8 --provisioning-profile-path ./apple/diadiemthainguyen.mobileprovision --release-channel production
+        run: >
+          expo build:ios
+          -t archive
+          --team-id 5UWGGHF8U7
+          --dist-p12-path ./apple/CertificatesP12.p12
+          --push-id RDRBQZ38N4
+          --push-p8-path ./apple/AuthKey_RDRBQZ38N4.p8
+          --provisioning-profile-path ./apple/diadiemthainguyen.mobileprovision
+          --release-channel production
         env:
-          FASTLANE_SESSION: ${{secrets.FASTLANE_SESSION}}
-          EXPO_FASTLANE_SESSION: ${{secrets.FASTLANE_SESSION}}
-          FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{secrets.EXPO_APP_SPECIFIC_PASSWORD}}
           EXPO_APP_SPECIFIC_PASSWORD: ${{secrets.EXPO_APP_SPECIFIC_PASSWORD}}
           EXPO_IOS_DIST_P12_PASSWORD: ${{secrets.EXPO_IOS_DIST_P12_PASSWORD}}
