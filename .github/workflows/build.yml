@@ -63,8 +63,7 @@ jobs:
 #          app_specific_password: ${{ secrets.EXPO_APP_SPECIFIC_PASSWORD }}
       - name: Build iOS app
         run: |
-          expo build:ios --team-id 5UWGGHF8U7 --dist-p12-path ./apple/CertificatesP12.p12 --push-id RDRBQZ38N4
-          --push-p8-path ./apple/AuthKey_RDRBQZ38N4.p8 --release-channel production
+          expo build:ios --team-id 5UWGGHF8U7 --dist-p12-path ./apple/CertificatesP12.p12 --push-id RDRBQZ38N4 --push-p8-path ./apple/AuthKey_RDRBQZ38N4.p8 --release-channel production
         env:
           EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
           EXPO_APPLE_PASSWORD: ${{secrets.EXPO_APPLE_PASSWORD}}
