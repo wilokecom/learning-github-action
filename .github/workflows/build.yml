@@ -51,6 +51,7 @@ jobs:
           expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
           expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
           expo-cache: true
+      - uses: c-hive/gha-yarn-cache@v1
       - name: Install deps
         run: yarn install
 #      - uses: jakemwood/expo-apple-2fa@main
@@ -66,9 +67,9 @@ jobs:
         run: |
           expo build:ios
           --team-id 5UWGGHF8U7
-          --dist-p12-path ./../apple/CertificatesP12.cer
+          --dist-p12-path ./apple/CertificatesP12.cer
           --push-id RDRBQZ38N4
-          --push-p8-path ./../apple/AuthKey_RDRBQZ38N4.p8
+          --push-p8-path ./apple/AuthKey_RDRBQZ38N4.p8
           --release-channel production --non-interactive
         env:
           EXPO_APPLE_ID: ${{secrets.EXPO_APPLE_ID}}
