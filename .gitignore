@@ -1,1 +1,10 @@
 .DS_Store
+webconsole.php
+fastlane
+node_modules
+yarn.lock
+package.lock
+.expo/*
+README.txt
+team-id/*
+useful/*
