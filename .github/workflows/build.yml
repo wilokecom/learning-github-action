@@ -62,7 +62,7 @@ jobs:
       #          expo_apple_password: ${{ secrets.EXPO_APPLE_PASSWORD }}
       #          app_specific_password: ${{ secrets.EXPO_APP_SPECIFIC_PASSWORD }}
       - name: Optimize image
-        run: run npx expo-optimize
+        run: npx expo-optimize
       - name: Build iOS app
         run: >
           expo build:ios
