@@ -57,7 +57,7 @@ jobs:
       - name: Optimize image
         run: npx expo-optimize
       - name: Export Password P12
-        run: export EXPO_IOS_P12_PASSWORD='enlace5430,vituperating'
+        run: export EXPO_IOS_DIST_P12_PASSWORD='enlace5430,vituperating'
       - name: Build iOS app
         run: >
           expo build:ios
@@ -70,4 +70,3 @@ jobs:
           --release-channel production
         env:
           EXPO_APP_SPECIFIC_PASSWORD: ${{secrets.EXPO_APP_SPECIFIC_PASSWORD}}
-          EXPO_IOS_DIST_P12_PASSWORD: ${{EXPO_IOS_P12_PASSWORD}}
