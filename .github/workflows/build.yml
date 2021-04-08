@@ -3,31 +3,31 @@ on:
   push:
     branches: [ master ]
 jobs:
-  build-for-android:
-    runs-on: macos-latest
-    timeout-minutes: 3600
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with:
-          node-version: 12.x
-      - uses: actions/setup-java@v1.4.3
-        with:
-          java-version: '9.0.4' # The JDK version to make available on the path.
-          java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
-          architecture: x64 # (x64 or x86) - defaults to x64
-      - uses: expo/expo-github-action@v5
-        with:
-          expo-version: 4.x
-          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
-          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
-          expo-cache: true
-      - name: Install deps
-        run: yarn install
-      - name: Image optimization
-        run: npx expo-optimize
-      - name: Build Android APK Bundle
-        run: expo build:android
+#  build-for-android:
+#    runs-on: macos-latest
+#    timeout-minutes: 3600
+#    steps:
+#      - uses: actions/checkout@v2
+#      - uses: actions/setup-node@v1
+#        with:
+#          node-version: 12.x
+#      - uses: actions/setup-java@v1.4.3
+#        with:
+#          java-version: '9.0.4' # The JDK version to make available on the path.
+#          java-package: jdk # (jre, jdk, or jdk+fx) - defaults to jdk
+#          architecture: x64 # (x64 or x86) - defaults to x64
+#      - uses: expo/expo-github-action@v5
+#        with:
+#          expo-version: 4.x
+#          expo-username: ${{ secrets.EXPO_CLI_USERNAME }}
+#          expo-password: ${{ secrets.EXPO_CLI_PASSWORD }}
+#          expo-cache: true
+#      - name: Install deps
+#        run: yarn install
+#      - name: Image optimization
+#        run: npx expo-optimize
+#      - name: Build Android APK Bundle
+#        run: expo build:android
   build-for-IOS:
     runs-on: macos-latest
     steps:
@@ -56,11 +56,9 @@ jobs:
         run: yarn install
       - name: Optimize image
         run: npx expo-optimize
-      - name: Export Password P12
-        run: export EXPO_IOS_DIST_P12_PASSWORD='enlace5430,vituperating'
       - name: Build iOS app
         run: >
-          expo build:ios
+          export EXPO_IOS_DIST_P12_PASSWORD='enlace5430,vituperating' && expo build:ios
           -t archive
           --team-id 5UWGGHF8U7
           --dist-p12-path ./apple/CertificatesP12.p12
