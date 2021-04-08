@@ -1,12 +1,12 @@
 {
     "expo": {
-        "name": "Wilcity",
-        "description": "Wilcity - Directory Listing WordPress Theme",
+        "name": "Khám Phá Thái Nguyên",
+        "description": "Địa điểm Thái Nguyên",
         "slug": "diadiemthainguyen",
         "privacy": "public",
         "scheme": "diadiemthainguyen",
         "platforms": ["ios", "android"],
-        "version": "2.1.1",
+        "version": "2.1.0",
         "orientation": "portrait",
         "icon": "./assets/icon.png",
         "splash": {
@@ -26,7 +26,7 @@
         },
         "assetBundlePatterns": ["**/*"],
         "ios": {
-            "buildNumber": "13",
+            "buildNumber": "1",
             "supportsTablet": true,
             "infoPlist": {
                 "NSLocationAlwaysUsageDescription": "This app uses the location to show listings nearby you.",
@@ -45,10 +45,10 @@
         "android": {
             "googleServicesFile": "./google-services.json",
             "package": "com.diadiemthainguyen",
-            "versionCode": 26,
+            "versionCode": 1,
             "config": {
                 "googleMaps": {
-                    "apiKey": "AIzaSyBcD3SzdN60Em_jo-Uup1zotROWEnxCKE8"
+                    "apiKey": "AIzaSyCnXpVwZ5VyQDZ2COh3d82mtqy9dhYr5vk"
                 },
                 "googleSignIn": {
                     "apiKey": "AIzaSyDlmq26_nlDWs7tjMRVEF4kcQSCL-i46_g",
@@ -59,7 +59,7 @@
             "intentFilters": [{
                 "action": "VIEW",
                 "data": [{
-                    "scheme": "diadiemthainguyen"
+                    "scheme": "wilcity"
                 }],
                 "category": ["BROWSABLE", "DEFAULT"]
             }],
